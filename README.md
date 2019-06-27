@@ -3,6 +3,7 @@
 ## Trivia Game
 
 ### Wireframes
+![Home] (https://res.cloudinary.com/dsvn8q13w/raw/upload/v1561594213/SEI%20P2/wireframes/home_w9bg1l.xd)
 
 ### MVP
 - Use [Open Trivia Database api](https://opentdb.com/api_config.php)
