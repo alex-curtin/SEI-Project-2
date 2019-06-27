@@ -3,8 +3,11 @@
 ## Trivia Game
 
 ### Wireframes
-![Home] (https://res.cloudinary.com/dsvn8q13w/raw/upload/v1561594213/SEI%20P2/wireframes/home_w9bg1l.xd)
-Format: ![Alt Text](url)
+- [Home](https://res.cloudinary.com/dsvn8q13w/raw/upload/v1561594213/SEI%20P2/wireframes/home_w9bg1l.xd)
+- [Select Categories](https://res.cloudinary.com/dsvn8q13w/raw/upload/v1561594213/SEI%20P2/wireframes/categories_ltnhb8.xd)
+- [Question](https://res.cloudinary.com/dsvn8q13w/raw/upload/v1561594214/SEI%20P2/wireframes/question_bykktu.xd)
+- [Result](https://res.cloudinary.com/dsvn8q13w/raw/upload/v1561594214/SEI%20P2/wireframes/result_ecywuf.xd)
+
 
 ### MVP
 - Use [Open Trivia Database api](https://opentdb.com/api_config.php)
