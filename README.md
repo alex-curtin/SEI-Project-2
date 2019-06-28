@@ -23,7 +23,7 @@ A trivia game that asks questions from randomly selected categories, based on a 
 - Selecting random items from an array
   - something like: ```const item = array[Math.floor(Math.random() * array.lenght)];```
 - Switching components based on user actions, such as submitting an answer.
-  - Use witRouter and include 'this.props.history.push()' in handleSubmit function.
+  - Use withRouter and include 'this.props.history.push()' in handleSubmit function.
 
 ### Component Hierarchy
 ```
@@ -41,7 +41,7 @@ A trivia game that asks questions from randomly selected categories, based on a 
 [Open Trivia Database api](https://opentdb.com/api_config.php)
 - API calls will include:
   - getCategories() - gets a list of all available categories, doesn't require params.
-  - getQuestion(cat) - returns one random question. Takes a category id as a param,     randomly selected from list chosen by user.
+  - getQuestion(cat) - returns one random question. Takes a category id as argument,     randomly selected from list chosen by user.
 
 ### MVP
 - Let users choose from pre-determined trivia categories
