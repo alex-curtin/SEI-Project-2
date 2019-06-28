@@ -16,13 +16,15 @@ A trivia game that asks questions from randomly selected categories, based on a 
 
 
 ### Component Hierarchy
-- <App />
--   <SelectCategories />
--   <StartGame />
--   <Display />
--     <Question />
--     <Result />
--   <EndGame />
+```
+ <App />
+   <SelectCategories />
+   <StartGame />
+   <Display />
+     <Question />
+     <Result />
+   <EndGame />
+   ```
 
 ### API
 [Open Trivia Database api](https://opentdb.com/api_config.php)
