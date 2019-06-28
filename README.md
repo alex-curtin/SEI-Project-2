@@ -11,23 +11,34 @@
 ### Description
 A trivia game that asks questions from randomly selected categories, based on a group of categories pre-selected by the user. It will inform the user if they were right or wrong and display the correct answer. It will also keep a running score throughout the game. The game will end after a certain number of questions and display the final score.
 
-### Expected Problems
-- 
-
+### Expected Problems & Proposed Solutions
+- Keeping track of numerous game states, including: score, question count, current      category, current question, current options (right answer and wrong answers), current difficulty, etc.
+  - Keep permanent states (score, question count) in App component
+  - Keep temporary states (current question, current category) in Display component
+- Creating form of all available categories from API
+  - Use API call that returns all categories, store them in state as an array of objects with keys name (to display on form) and id (to pass to API calls for questions) 
+  - Use map to create checkbox inputs for each to add to a form. Form submit changes array or creates a new array of only selected categories.
+- Selecting random items from an array
+  - something like: ```const item = array[Math.floor(Math.random() * array.lenght)];```
+- Switching components based on user actions, such as submitting an answer.
+  - Use witRouter and include 'this.props.history.push()' in handleSubmit function.
 
 ### Component Hierarchy
 ```
- <App />
-   <SelectCategories />
-   <StartGame />
-   <Display />
-     <Question />
-     <Result />
-   <EndGame />
+ <App />  contains Header/Footer  States: score, right & wrong answer count
+   <SelectCategories />  checkbox form - user selects categories
+   <StartGame />  tells player game is starting
+   <Display />  displays score, category, difficulty, question count  States: current category, question, right answer, wrong answers, 	question difficulty
+     <Question />  presents question and answer choices
+     <Result />  shows right answer, change in score
+   <EndGame />  shows final score
    ```
 
 ### API
 [Open Trivia Database api](https://opentdb.com/api_config.php)
+API calls will include:
+- getCategories() - gets a list of all available categories, doesn't require params.
+- getQuestion(cat) - returns one random question. Takes a category id as a param,     randomly selected from list chosen by user.
 
 ### MVP
 - Let users choose from pre-determined trivia categories
