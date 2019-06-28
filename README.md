@@ -25,27 +25,31 @@ A trivia game that asks questions from randomly selected categories, based on a 
 
 ### Component Hierarchy
 ```
- <App />  contains Header/Footer  States: score, right & wrong answer count
-   <SelectCategories />  checkbox form - user selects categories
-   <StartGame />  tells player game is starting
-   <Display />  displays score, category, difficulty, question count  States: current category, question, right answer, wrong answers, 	question difficulty
-     <Question />  presents question and answer choices
-     <Result />  shows right answer, change in score
-   <EndGame />  shows final score
+ <App />  - contains Header/Footer  States: score, right & wrong answer count
+   <SelectCategories />  - checkbox form - user selects categories
+   <StartGame />  - tells player game is starting
+   <Display />  - displays score, category, difficulty, question count  States: current category, question, right answer, wrong answers, question difficulty
+     <Question />  - presents question and answer choices
+     <Result />  - shows right answer, change in score
+   <EndGame />  - shows final score
    ```
 
 ### API
 [Open Trivia Database api](https://opentdb.com/api_config.php)
-API calls will include:
-- getCategories() - gets a list of all available categories, doesn't require params.
-- getQuestion(cat) - returns one random question. Takes a category id as a param,     randomly selected from list chosen by user.
+- API calls will include:
+  - getCategories() - gets a list of all available categories, doesn't require params.
+  - getQuestion(cat) - returns one random question. Takes a category id as a param,     randomly selected from list chosen by user.
 
 ### MVP
 - Let users choose from pre-determined trivia categories
 - Get random, multiple choice questions from API for users to answer
 - Inform users if they were correct/incorrect
-- Keep score
+- Display relevant game info, such as score, current category & question difficulty
+- Keep score, correct & incorrect answer counts
+- End game after certain number questions
+- Style app, including responsivity
 ### PostMVP
 - Adjust difficulty as game progresses based on number of right/wrong answers
 - Add a time limit for answering question
+- Keep track of player's best and worst categories
 
