@@ -1,5 +1,7 @@
 # SEI-Project-2
 
+![](https://media.giphy.com/media/10o3Um2U3wa4DK/giphy.gif)
+
 ## Trivia Game
 
 ### Wireframes
