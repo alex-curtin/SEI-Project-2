@@ -29,8 +29,9 @@ A trivia game that asks questions from randomly selected categories, based on a 
    <SelectCategories />  - checkbox form - user selects categories
    <StartGame />  - tells player game is starting
    <Display />  - displays score, category, difficulty, question count  States: current category, question, right answer, wrong answers, question difficulty
-     <Question />  - presents question and answer choices
-     <Result />  - shows right answer, change in score
+     <Question />  - presents question
+        <Options />   - presents answer choices
+     <Result />  - shows correct answer, change in score
    <EndGame />  - shows final score
    ```
 
