@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       categories: [],
       selectedCats: [],
+      score: 0,
     }
   }
 
@@ -36,6 +37,12 @@ class App extends React.Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault();
+  }
+
+  scorePoints = () => {
+    this.setState((prevState) => ({
+      score: prevState.score + 1,
+    }))
   }
 
   render() {
@@ -67,7 +74,11 @@ class App extends React.Component {
         />
         <Route
           path='/display'
-          render={() => <Display />}
+          render={() =>
+            <Display
+              score={this.state.score}
+              scorePoints={this.scorePoints}
+            />}
         />
       </div>
     );

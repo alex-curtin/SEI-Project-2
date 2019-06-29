@@ -25,3 +25,7 @@ form div {
   width: 20%;
   margin: 5px auto;
 }
+
+.right {
+  background: red;
+}

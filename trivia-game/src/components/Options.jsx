@@ -12,7 +12,7 @@ const Options = (props) => {
             id={wrong[0]}
             onClick={props.handleSubmit}
           >{wrong[0]}</button>
-          <button
+          <button className="right"
             id={right}
             onClick={props.handleSubmit}
           >{right}</button>

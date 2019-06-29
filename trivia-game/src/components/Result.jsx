@@ -7,10 +7,11 @@ const Result = (props) => {
   return (
     <div>
       <p>{wrong[0]}</p>
-      <p>{right}</p>
+      <p className="right">{right}</p>
       <p>{wrong[1]}</p>
       <p>{wrong[2]}</p>
       <button
+        onClick={props.nextQuestion}
       >Next Question</button>
     </div>
   )
