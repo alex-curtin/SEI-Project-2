@@ -20,14 +20,20 @@ form div {
   background: lightgoldenrodyellow;
 }
 
-.options {
-  display: flex;
-  flex-direction: column;
+.opt-button, .right-answer, .wrong-answer {
+  width: 40%;
+  height: 50px;
+  margin: 5px auto;
+  border: none;
+  background: yellow;
+  font-size: 20px;
+}
+.wrong-answer {
+  background: grey;
 }
 
-.options button {
-  width: 20%;
-  margin: 5px auto;
+.right-answer {
+  background: green;
 }
 
 #info {
@@ -47,8 +53,6 @@ form div {
 
 #question {
   background: lightblue;
-}
-
-#options {
-  background: lightsalmon;
+  height: 80px;
+  font-size: 20px;
 }

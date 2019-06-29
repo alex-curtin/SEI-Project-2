@@ -38,21 +38,14 @@ class Display extends React.Component {
   }
 
   handleSubmit = (ev) => {
-    this.setState({
-      answer: ev.target.id,
-    })
-    this.state.answer &&
-      this.checkAnswer();
-  }
-
-  checkAnswer = () => {
-    const check = (this.state.answer === this.state.question.correct_answer);
+    const check = (ev.target.id === this.state.question.correct_answer);
     this.setState({
       isRight: check,
       isAnswered: true,
     })
     check && this.props.scorePoints();
   }
+
 
   nextQuestion = async (ev) => {
     ev.preventDefault();
@@ -83,19 +76,14 @@ class Display extends React.Component {
         />
         {this.state.isAnswered ?
           <Result
-            right={this.state.question.correct_answer}
-            wrong={this.state.question.incorrect_answers}
             options={this.state.options}
+            right={this.state.question.correct_answer}
             nextQuestion={this.nextQuestion}
           /> :
           <Options
-            right={this.state.question.correct_answer}
-            wrong={this.state.question.incorrect_answers}
             options={this.state.options}
             handleSubmit={this.handleSubmit}
           />}
-
-
       </div>
     )
   }
