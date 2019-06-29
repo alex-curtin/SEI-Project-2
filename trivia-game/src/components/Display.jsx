@@ -9,7 +9,9 @@ class Display extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      question: ''
+      question: '',
+      isAnswered: false,
+      answer: '',
     }
   }
 
@@ -20,20 +22,35 @@ class Display extends React.Component {
     })
   }
 
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    this.setState({
+      answer: ev.target.id,
+      isAnswered: true,
+      isRight: false,
+    })
+  }
+
   render() {
     return (
       <div>
         <Question
           question={this.state.question.question}
+          isAnswered={this.state.isAnswered}
+          isRight={this.state.isRight}
         />
-        <Options
-          answer={this.state.question.correct_answer}
-          wrong={this.state.question.incorrect_answers}
-        />
-        <Route
-          path="/result"
-          render={() => <Result />}
-        />
+        {this.state.isAnswered ?
+          <Result
+            right={this.state.question.correct_answer}
+            wrong={this.state.question.incorrect_answers}
+          /> :
+          <Options
+            right={this.state.question.correct_answer}
+            wrong={this.state.question.incorrect_answers}
+            handleSubmit={this.handleSubmit}
+          />}
+
+
       </div>
     )
   }

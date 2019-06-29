@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Result = () => {
+const Result = (props) => {
+  const right = props.right;
+  const wrong = props.wrong;
   return (
     <div>
-      <p>No</p>
-      <p>Yes</p>
-      <p>No</p>
-      <p>No</p>
+      <p>{wrong[0]}</p>
+      <p>{right}</p>
+      <p>{wrong[1]}</p>
+      <p>{wrong[2]}</p>
       <button
-        onClick={() => <Link to="/question" />}
       >Next Question</button>
     </div>
   )

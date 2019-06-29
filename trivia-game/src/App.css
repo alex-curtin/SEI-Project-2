@@ -20,3 +20,8 @@ form div {
   display: flex;
   flex-direction: column;
 }
+
+.options button {
+  width: 20%;
+  margin: 5px auto;
+}

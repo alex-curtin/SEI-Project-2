@@ -4,8 +4,15 @@ const Question = (props) => {
 
   return (
     <div>
-      <p>{props.question}</p>
-    </div>
+      {props.isAnswered ?
+        <div>
+          <p>{props.question}</p>
+        </div> :
+        <div>
+          <p>{props.question}</p>
+        </div>
+      }
+    </div >
   )
 }
 
