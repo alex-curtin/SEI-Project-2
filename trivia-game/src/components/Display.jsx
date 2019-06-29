@@ -9,6 +9,7 @@ class Display extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      qCount: 1,
       question: '',
       isAnswered: false,
       answer: '',
@@ -24,7 +25,6 @@ class Display extends React.Component {
   }
 
   handleSubmit = (ev) => {
-    ev.preventDefault();
     this.setState({
       answer: ev.target.id,
     })
@@ -44,17 +44,19 @@ class Display extends React.Component {
   nextQuestion = async (ev) => {
     ev.preventDefault();
     const resp = await getQuestion(9);
-    this.setState({
+    this.setState((prevState) => ({
       question: resp,
       isAnswered: false,
       answer: '',
-    })
+      qCount: prevState.qCount + 1,
+    }))
   }
 
   render() {
     return (
       <div>
         <h4>SCORE: {this.props.score}</h4>
+        <h4>QUESTION # {this.state.qCount}</h4>
         <Question
           question={this.state.question.question}
           isAnswered={this.state.isAnswered}
