@@ -4,7 +4,7 @@ const Question = (props) => {
   const isRight = props.isRight;
   const result = isRight ? <p>Correct!</p> : <p>Incorrect!</p>
   return (
-    <div>
+    <div id="question">
       {props.isAnswered ?
         <div>
           {result}

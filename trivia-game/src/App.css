@@ -16,6 +16,10 @@ form div {
   margin-bottom: 5px;
 }
 
+#display {
+  background: lightgoldenrodyellow;
+}
+
 .options {
   display: flex;
   flex-direction: column;
@@ -26,5 +30,25 @@ form div {
   margin: 5px auto;
 }
 
-.right {
+#info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 50%;
+  margin: 0 auto;
+  background: lightgreen;
+}
+
+#info p {
+  color: red;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+#question {
+  background: lightblue;
+}
+
+#options {
+  background: lightsalmon;
 }

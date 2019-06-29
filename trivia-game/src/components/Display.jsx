@@ -4,6 +4,7 @@ import Options from './Options';
 import Result from './Result';
 import { Route } from 'react-router-dom';
 import { getQuestion } from '../services/api-helper';
+import { shuffle } from '../services/helper-functions';
 
 class Display extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Display extends React.Component {
       isAnswered: false,
       answer: '',
       isRight: true,
+      options: [],
     }
   }
 
@@ -21,6 +23,17 @@ class Display extends React.Component {
     const resp = await getQuestion(9);
     this.setState({
       question: resp
+    })
+    this.createOptions();
+  }
+
+  createOptions = () => {
+    const wrong = this.state.question.incorrect_answers;
+    const right = this.state.question.correct_answer;
+    const all = [...wrong, right]
+    const options = shuffle(all);
+    this.setState({
+      options: options,
     })
   }
 
@@ -49,14 +62,20 @@ class Display extends React.Component {
       isAnswered: false,
       answer: '',
       qCount: prevState.qCount + 1,
+      options: [],
     }))
+    this.createOptions();
   }
 
   render() {
     return (
-      <div>
-        <h4>SCORE: {this.props.score}</h4>
-        <h4>QUESTION # {this.state.qCount}</h4>
+      <div id="display">
+        <div id="info">
+          <p>SCORE: {this.props.score}</p>
+          <p>QUESTION # {this.state.qCount}</p>
+          <p>CATEGORY: {this.state.question.category}</p>
+          <p>DIFFICULTY: {this.state.question.difficulty}</p>
+        </div>
         <Question
           question={this.state.question.question}
           isAnswered={this.state.isAnswered}
@@ -66,11 +85,13 @@ class Display extends React.Component {
           <Result
             right={this.state.question.correct_answer}
             wrong={this.state.question.incorrect_answers}
+            options={this.state.options}
             nextQuestion={this.nextQuestion}
           /> :
           <Options
             right={this.state.question.correct_answer}
             wrong={this.state.question.incorrect_answers}
+            options={this.state.options}
             handleSubmit={this.handleSubmit}
           />}
 
