@@ -7,6 +7,6 @@ export const getCategories = async () => {
 }
 
 export const getQuestion = async (cat) => {
-  const resp = await axios.get(`https://opentdb.com/api.php?amount=1&category=${cat}&type=multiple`);
+  const resp = await axios.get(`https://opentdb.com/api.php?amount=1&category=${cat}`);
   return resp.data.results[0];
 }

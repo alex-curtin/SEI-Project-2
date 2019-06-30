@@ -84,7 +84,7 @@ class App extends React.Component {
           path='/game'
           render={() =>
             <Game
-              categories={this.state.categories}
+              categories={this.state.selectedCats}
               score={this.state.score}
               scorePoints={this.scorePoints}
             />}

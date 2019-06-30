@@ -20,7 +20,7 @@ class Game extends React.Component {
   }
 
   async componentDidMount() {
-    const category = Math.floor(Math.random() * 22 + 9);
+    const category = this.getRandomCategory();
     const resp = await getQuestion(category);
     this.setState({
       question: resp
@@ -31,7 +31,6 @@ class Game extends React.Component {
   getRandomCategory = () => {
     const categories = this.props.categories;
     const shuffled = shuffle(categories);
-    debugger;
     return shuffled[0].id
   }
 
@@ -57,7 +56,7 @@ class Game extends React.Component {
 
   nextQuestion = async (ev) => {
     ev.preventDefault();
-    const category = Math.floor(Math.random() * 22 + 9);
+    const category = this.getRandomCategory();
     const resp = await getQuestion(category);
     this.setState((prevState) => ({
       question: resp,

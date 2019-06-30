@@ -12,3 +12,8 @@ export const shuffle = (array) => {
   }
   return array;
 }
+
+export const fixCategoryName = (name) => {
+  let fixed = name.replace('Entertainment: ', '')
+  return fixed;
+}

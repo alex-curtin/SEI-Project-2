@@ -1,16 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { fixCategoryName } from '../services/helper-functions';
 
 const Categories = (props) => {
 
   return (
     <div>
-      <div>
-        <p>Your Categories:</p>
-        {props.selectedCats.map(cat => (
-          <p className="your-cat">{cat.name}</p>
-        ))
-        }
-      </div>
+      {props.selectedCats[0] &&
+        <div>
+          <p>Your Categories:</p>
+          {props.selectedCats.map(cat => (
+            <div key={cat.id}>
+              <p className="your-cat">{fixCategoryName(cat.name)}</p>
+            </div>
+          ))
+          }
+        </div>}
       <p>Select Categories</p>
       <div>
         {props.categories.map(cat => (
@@ -20,10 +25,15 @@ const Categories = (props) => {
             onClick={() =>
               props.changeSelected(cat)}
           >
-            {cat.name}
+            {fixCategoryName(cat.name)}
           </button>
         ))}
       </div>
+      {props.selectedCats[0] &&
+        <Link to="/">
+          DONE
+          </Link>
+      }
     </div>
   )
 }

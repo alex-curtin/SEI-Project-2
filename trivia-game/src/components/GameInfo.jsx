@@ -1,6 +1,7 @@
 import React from 'react';
 
 const GameInfo = (props) => {
+  debugger;
   return (
     <div id="info">
       <p id="score">SCORE: {props.score}</p>
