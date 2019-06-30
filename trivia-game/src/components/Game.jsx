@@ -2,11 +2,11 @@ import React from 'react';
 import Question from './Question';
 import Options from './Options';
 import Result from './Result';
-import { Route } from 'react-router-dom';
+import GameInfo from './GameInfo';
 import { getQuestion } from '../services/api-helper';
 import { shuffle } from '../services/helper-functions';
 
-class Display extends React.Component {
+class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,11 +20,19 @@ class Display extends React.Component {
   }
 
   async componentDidMount() {
-    const resp = await getQuestion(9);
+    const category = Math.floor(Math.random() * 22 + 9);
+    const resp = await getQuestion(category);
     this.setState({
       question: resp
     })
     this.createOptions();
+  }
+
+  getRandomCategory = () => {
+    const categories = this.props.categories;
+    const shuffled = shuffle(categories);
+    debugger;
+    return shuffled[0].id
   }
 
   createOptions = () => {
@@ -49,7 +57,8 @@ class Display extends React.Component {
 
   nextQuestion = async (ev) => {
     ev.preventDefault();
-    const resp = await getQuestion(9);
+    const category = Math.floor(Math.random() * 22 + 9);
+    const resp = await getQuestion(category);
     this.setState((prevState) => ({
       question: resp,
       isAnswered: false,
@@ -63,12 +72,11 @@ class Display extends React.Component {
   render() {
     return (
       <div id="display">
-        <div id="info">
-          <p>SCORE: {this.props.score}</p>
-          <p>QUESTION # {this.state.qCount}</p>
-          <p>CATEGORY: {this.state.question.category}</p>
-          <p>DIFFICULTY: {this.state.question.difficulty}</p>
-        </div>
+        <GameInfo
+          score={this.props.score}
+          qCount={this.state.qCount}
+          question={this.state.question}
+        />
         <Question
           question={this.state.question.question}
           isAnswered={this.state.isAnswered}
@@ -89,4 +97,4 @@ class Display extends React.Component {
   }
 }
 
-export default Display
+export default Game;

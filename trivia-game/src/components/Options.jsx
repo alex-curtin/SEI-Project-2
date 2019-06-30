@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Options = (props) => {
   const options = props.options;
   return (
-    <div id="options">
+    <div className="options">
       {options &&
         options.map((option) => (
           <div key={option}>

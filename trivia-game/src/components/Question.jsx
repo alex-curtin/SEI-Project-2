@@ -2,16 +2,18 @@ import React from 'react';
 
 const Question = (props) => {
   const isRight = props.isRight;
-  const result = isRight ? <p>Correct!</p> : <p>Incorrect!</p>
+  const result = isRight ?
+    <p id="correct">Correct!</p> :
+    <p id="incorrect">Incorrect!</p>
   return (
-    <div id="question">
+    <div id="question-section">
       {props.isAnswered ?
         <div>
+          <p id="question">{props.question}</p>
           {result}
-          <p>{props.question}</p>
         </div> :
         <div>
-          <p>{props.question}</p>
+          <p id="question">{props.question}</p>
         </div>
       }
     </div >

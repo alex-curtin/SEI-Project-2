@@ -1,28 +1,100 @@
 .App {
   text-align: center;
+  font-family: 'IBM Plex Mono', sans-serif;
 }
 
-form {
-  background: yellow;
-  width: 80%;
+header {
+  border: 1px solid black;
+}
+
+/* SELECT CATEGORIES */
+
+.your-cat {
+  display: inline;
+  margin: 5px;
+  font-size: 15px;
+  background: lightpink;
+  padding: 3px;
+}
+
+
+/* GAME SECTION */
+#display {
+border: 1px solid black;
+margin: 0 auto;
+width: 90%;
+}
+
+/* GAME INFO */
+#info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid black;
+  height: 100px;
+}
+#score {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 25px;
+}
+
+#info p {
+  margin: 5px 10px;
+  text-align: center;
+}
+
+/* QUESTIONS */
+#question-section {
+  font-size: 20px;
+  /* display: flex;
+  justify-content: center; */
+  height: 150px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#question-section div {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+#question {
+  font-size: 25px;
+  justify-self: flex-start;
+  margin: 0;
+  margin-top: 10px;
+}
+
+#correct, #incorrect {
+  font-size: 30px;
+  justify-self: flex-end;
+}
+
+#correct {
+  color: green;
+}
+
+#incorrect {
+  color: red;
+}
+
+/* BUTTONS */
+.options {
+  height: 200px;
+  width: 60%;
   margin: 0 auto;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
 }
 
-form div {
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-#display {
-  background: lightgoldenrodyellow;
-}
-
-.opt-button, .right-answer, .wrong-answer {
-  width: 40%;
-  height: 50px;
+.opt-button, .right-answer, .wrong-answer, #next {
+  width: 95%;
+  height: 90%;
   margin: 5px auto;
   border: none;
   background: yellow;
@@ -36,23 +108,8 @@ form div {
   background: green;
 }
 
-#info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 50%;
-  margin: 0 auto;
-  background: lightgreen;
-}
-
-#info p {
-  color: red;
-  margin: 5px 10px;
-  text-align: center;
-}
-
-#question {
-  background: lightblue;
-  height: 80px;
-  font-size: 20px;
+#next {
+  width: 20%;
+  background: hotpink;
+  color: white;
 }

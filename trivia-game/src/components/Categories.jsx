@@ -1,25 +1,29 @@
 import React from 'react';
 
 const Categories = (props) => {
+
   return (
     <div>
+      <div>
+        <p>Your Categories:</p>
+        {props.selectedCats.map(cat => (
+          <p className="your-cat">{cat.name}</p>
+        ))
+        }
+      </div>
       <p>Select Categories</p>
-      <form onSubmit={props.handleSubmit}>
+      <div>
         {props.categories.map(cat => (
-          <div key={cat.id}>
-            <input
-              type="checkbox"
-              name={cat.name}
-              id={cat.id}
-              onSubmit={props.handleCheck}
-            />
-            <label htmlFor={cat.name}>
-              {cat.name}
-            </label>
-          </div>
+          <button
+            className="cat-button"
+            key={cat.id}
+            onClick={() =>
+              props.changeSelected(cat)}
+          >
+            {cat.name}
+          </button>
         ))}
-        <button>SUBMIT</button>
-      </form>
+      </div>
     </div>
   )
 }

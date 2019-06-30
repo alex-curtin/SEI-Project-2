@@ -6,7 +6,7 @@ const Start = () => {
     <div>
       <p>The game is about to start</p>
       <Link
-        to='/display'
+        to='/game'
       >Start it</Link>
     </div>
   )
