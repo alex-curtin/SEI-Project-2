@@ -4,8 +4,8 @@ import { Link, Route } from 'react-router-dom';
 const Home = () => {
   return (
     <div id="home">
-      <Link to='/categories'> Select Categories</Link>
-      <Link to='/start'>Start Game</Link>
+      <h2>Select some categories to start the game</h2>
+      <Link to='/categories'><button>If you insist</button></Link>
     </div>
   )
 }

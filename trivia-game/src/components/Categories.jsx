@@ -21,9 +21,9 @@ const Categories = (props) => {
         ))}
       </div>
       {props.selectedCats[0] &&
-        <Link to="/">
-          DONE
-          </Link>
+        <Link to="/start">
+          <button id="done">DONE</button>
+        </Link>
       }
     </div>
   )

@@ -39,6 +39,17 @@ header {
   border: 3px solid lightblue;
 }
 
+#done {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  border: none;
+  background: green;
+  color: white;
+  height: 30px;
+  width: 60px;
+  margin-top: 20px;
+}
 
 /* GAME SECTION */
 #display {

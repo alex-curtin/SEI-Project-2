@@ -5,6 +5,7 @@ import Result from './Result';
 import GameInfo from './GameInfo';
 import { getQuestion } from '../services/api-helper';
 import { shuffle } from '../services/helper-functions';
+import { Link } from 'react-router-dom';
 
 class Game extends React.Component {
   constructor(props) {
@@ -91,6 +92,9 @@ class Game extends React.Component {
             options={this.state.options}
             handleSubmit={this.handleSubmit}
           />}
+        <Link to="/">
+          <button>QUIT GAME</button>
+        </Link>
       </div>
     )
   }
