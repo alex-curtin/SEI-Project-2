@@ -17,6 +17,28 @@ header {
   padding: 3px;
 }
 
+#categories {
+  margin: 0 auto;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cat-button-off, .cat-button-on {
+  width: 130px;
+  height: 60px;
+  border: none;
+  background: lightblue;
+  border: 3px solid transparent;
+  margin: 10px;
+  font-size: 15px;
+}
+
+.cat-button-on {
+  background: transparent;
+  border: 3px solid lightblue;
+}
+
 
 /* GAME SECTION */
 #display {

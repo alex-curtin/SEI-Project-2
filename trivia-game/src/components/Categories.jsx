@@ -6,21 +6,12 @@ const Categories = (props) => {
 
   return (
     <div>
-      {props.selectedCats[0] &&
-        <div>
-          <p>Your Categories:</p>
-          {props.selectedCats.map(cat => (
-            <div key={cat.id}>
-              <p className="your-cat">{fixCategoryName(cat.name)}</p>
-            </div>
-          ))
-          }
-        </div>}
       <p>Select Categories</p>
-      <div>
+      <div id="categories">
         {props.categories.map(cat => (
           <button
-            className="cat-button"
+            className={"cat-button" +
+              (props.selectedCats.includes(cat) ? "-on" : "-off")}
             key={cat.id}
             onClick={() =>
               props.changeSelected(cat)}

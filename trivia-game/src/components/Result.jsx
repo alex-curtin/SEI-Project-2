@@ -13,12 +13,10 @@ const Result = (props) => {
                 <button
                   className="right-answer"
                   id={option}
-                  onClick={props.handleSubmit}
                 >{option}</button> :
                 <button
                   className="wrong-answer"
                   id={option}
-                  onClick={props.handleSubmit}
                 >{option}</button>}
             </div>
           ))

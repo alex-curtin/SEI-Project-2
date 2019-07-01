@@ -14,6 +14,6 @@ export const shuffle = (array) => {
 }
 
 export const fixCategoryName = (name) => {
-  let fixed = name.replace('Entertainment: ', '')
+  let fixed = name.replace('Entertainment: ', '').replace('Science: ', '');
   return fixed;
 }
