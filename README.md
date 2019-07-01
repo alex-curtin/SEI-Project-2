@@ -1,6 +1,6 @@
 # SEI-Project-2
 
-![](https://gph.is/1emYn4u)
+![](https://media.giphy.com/media/qBs04S9G7xRMA/giphy.gif)
 
 ## Trivia Game
 
