@@ -1,6 +1,6 @@
 # SEI-Project-2
 
-![](https://media.giphy.com/media/10o3Um2U3wa4DK/giphy.gif)
+![](https://gph.is/1emYn4u)
 
 ## Trivia Game
 
@@ -13,17 +13,36 @@
 ### Description
 A trivia game that asks questions from randomly selected categories, based on a group of categories pre-selected by the user. It will inform the user if they were right or wrong and display the correct answer. It will also keep a running score throughout the game. The game will end after a certain number of questions and display the final score.
 
-### Expected Problems & Proposed Solutions
-- Keeping track of numerous game states, including: score, question count, current      category, current question, current options (right answer and wrong answers), current difficulty, etc.
-  - Keep permanent states (score, question count) in App component
-  - Keep temporary states (current question, current category) in Display component
-- Creating form of all available categories from API
-  - Use API call that returns all categories, store them in state as an array of objects with keys name (to display on form) and id (to pass to API calls for questions) 
-  - Use map to create checkbox inputs for each to add to a form. Form submit changes array or creates a new array of only selected categories.
-- Selecting random items from an array
-  - something like: ```const item = array[Math.floor(Math.random() * array.lenght)];```
-- Switching components based on user actions, such as submitting an answer.
-  - Use withRouter and include 'this.props.history.push()' in handleSubmit function.
+### Task List
+- [ ] Home Component
+  - [ ] Add some text explaining the game
+  - [ ] Display stats from previous game(s), if applicable *
+  - [ ] 'Play Again' if they've already played *
+- [x] Select Categories Component
+  - [x] Get categories from API and render them on page
+  - [x] Add functionality so they add/remove categories from list
+- [ ] Start component
+  - [ ] Add options for selecting game length, difficulty
+- [x] Info Component to keep track of score, question count, etc
+- [x] Question Component
+  - [x] randomly select category from user's selected list
+  - [x] get question from API and render
+  - [x] add correct/incorrect message after user submits answer
+- [ ] Options/Results Component
+  - [x] make array of right & wrong answers, shuffle them, render
+  - [x] add functionality so clicking on right/wrong answer will give correct result
+  - [x] once answer is submitted re-render options to show right/wrong answers
+  - [ ] these could probably be refactored to one component *
+- [ ] End of Game Component
+  - [ ] Tell users their final score, friendly message
+- [ ] Quit Game Component
+  - [ ] Less friendly message
+- [ ] Style App
+  - [ ] Make it look nice, consistent
+  - [ ] Responsive style for tablet
+  - [ ] Responsive style for phone
+- [ ] Other issues
+  - [ ] Get rid of html codes on question & answer text
 
 ### Component Hierarchy
 ```
