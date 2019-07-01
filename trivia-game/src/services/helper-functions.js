@@ -17,3 +17,11 @@ export const fixCategoryName = (name) => {
   let fixed = name.replace('Entertainment: ', '').replace('Science: ', '');
   return fixed;
 }
+
+export const convertSpecialCharacters = (str) => {
+  // '&#039;': "'",
+  // '&quot;': '"',
+
+  const fixed = str.replace(/&#039;/g, "'").replace(/&quot;/g, '"');
+  return fixed;
+}

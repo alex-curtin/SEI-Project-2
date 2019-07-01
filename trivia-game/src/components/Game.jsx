@@ -31,7 +31,8 @@ class Game extends React.Component {
 
   getRandomCategory = () => {
     const categories = this.props.categories;
-    const shuffled = shuffle(categories);
+    const shuffled = categories &&
+      shuffle(categories);
     return shuffled[0].id
   }
 

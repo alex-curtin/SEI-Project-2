@@ -1,4 +1,5 @@
 import React from 'react';
+import { convertSpecialCharacters } from '../services/helper-functions';
 
 const Result = (props) => {
   const options = props.options;
@@ -13,11 +14,11 @@ const Result = (props) => {
                 <button
                   className="right-answer"
                   id={option}
-                >{option}</button> :
+                >{convertSpecialCharacters(option)}</button> :
                 <button
                   className="wrong-answer"
                   id={option}
-                >{option}</button>}
+                >{convertSpecialCharacters(option)}</button>}
             </div>
           ))
         }

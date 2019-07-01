@@ -6,7 +6,7 @@ const Categories = (props) => {
 
   return (
     <div>
-      <p>Select Categories</p>
+      <p>Select Categories (at least 3)</p>
       <div id="categories">
         {props.categories.map(cat => (
           <button
@@ -20,7 +20,7 @@ const Categories = (props) => {
           </button>
         ))}
       </div>
-      {props.selectedCats[0] &&
+      {props.selectedCats[2] &&
         <Link to="/start">
           <button id="done">DONE</button>
         </Link>

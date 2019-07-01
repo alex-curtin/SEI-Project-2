@@ -14,6 +14,7 @@ class App extends React.Component {
       categories: [],
       selectedCats: [],
       score: 0,
+      gameLength: 20,
     }
   }
 
@@ -53,7 +54,7 @@ class App extends React.Component {
 
   scorePoints = () => {
     this.setState((prevState) => ({
-      score: prevState.score + 1,
+      score: prevState.score + 100,
     }))
   }
 

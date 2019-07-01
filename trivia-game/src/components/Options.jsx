@@ -1,4 +1,5 @@
 import React from 'react';
+import { convertSpecialCharacters } from '../services/helper-functions';
 
 const Options = (props) => {
   const options = props.options;
@@ -11,7 +12,7 @@ const Options = (props) => {
               className="opt-button"
               id={option}
               onClick={props.handleSubmit}
-            >{option}</button>
+            >{convertSpecialCharacters(option)}</button>
           </div>
         ))
       }

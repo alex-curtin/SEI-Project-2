@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Start = () => {
+const Start = (props) => {
   return (
     <div>
-      <p>The game is about to start</p>
+      <p>start game</p>
       <Link
         to='/game'
       >Start it</Link>

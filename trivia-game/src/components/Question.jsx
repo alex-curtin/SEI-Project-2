@@ -1,6 +1,8 @@
 import React from 'react';
+import { convertSpecialCharacters } from '../services/helper-functions';
 
 const Question = (props) => {
+  const question = props.question;
   const isRight = props.isRight;
   const result = isRight ?
     <p id="correct">Correct!</p> :
@@ -9,11 +11,11 @@ const Question = (props) => {
     <div id="question-section">
       {props.isAnswered ?
         <div>
-          <p id="question">{props.question}</p>
+          <p id="question">{convertSpecialCharacters(question)}</p>
           {result}
         </div> :
         <div>
-          <p id="question">{props.question}</p>
+          <p id="question">{question && convertSpecialCharacters(question)}</p>
         </div>
       }
     </div >
