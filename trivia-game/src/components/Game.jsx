@@ -70,6 +70,7 @@ class Game extends React.Component {
     this.createOptions();
   }
 
+
   render() {
     return (
       <div id="display">
@@ -88,6 +89,8 @@ class Game extends React.Component {
             options={this.state.options}
             right={this.state.question.correct_answer}
             nextQuestion={this.nextQuestion}
+            qCount={this.state.qCount}
+            gameLength={this.props.gameLength}
           /> :
           <Options
             options={this.state.options}

@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Link, Route } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 import { getCategories } from './services/api-helper';
 import Categories from './components/Categories';
 import Start from './components/Start';
 import Game from './components/Game';
 import Home from './components/Home';
+import EndGame from './components/EndGame';
 
 class App extends React.Component {
   constructor(props) {
@@ -48,6 +49,13 @@ class App extends React.Component {
     })
   }
 
+  handleChange = (ev) => {
+    const value = ev.target.value
+    this.setState({
+      gameLength: value,
+    })
+  }
+
   handleSubmit = (ev) => {
     ev.preventDefault();
   }
@@ -79,7 +87,10 @@ class App extends React.Component {
         />
         <Route
           path='/start'
-          render={() => <Start />}
+          render={() => <Start
+            gameLength={this.state.gameLength}
+            handleChange={this.handleChange}
+          />}
         />
         <Route
           path='/game'
@@ -88,11 +99,19 @@ class App extends React.Component {
               categories={this.state.selectedCats}
               score={this.state.score}
               scorePoints={this.scorePoints}
-            />}
+              gameLength={this.state.gameLength}
+            />
+          }
+        />
+        <Route
+          path='/end-game'
+          render={() =>
+            <EndGame />
+          }
         />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { convertSpecialCharacters } from '../services/helper-functions';
+import { Link } from 'react-router-dom';
 
 const Result = (props) => {
   const options = props.options;
@@ -23,9 +24,11 @@ const Result = (props) => {
           ))
         }
       </div>
-      <button id="next"
-        onClick={props.nextQuestion}
-      >Next Question</button>
+      {props.gameLength == props.qCount ?
+        <Link to='/end-game'>THIS WAS THE LAST QUESTION</Link> :
+        <button id="next"
+          onClick={props.nextQuestion}
+        >Next Question</button>}
     </div>
   )
 }
