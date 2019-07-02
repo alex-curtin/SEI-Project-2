@@ -74,11 +74,21 @@ class Game extends React.Component {
   render() {
     return (
       <div id="display">
-        <GameInfo
-          score={this.props.score}
-          qCount={this.state.qCount}
-          question={this.state.question}
-        />
+        <div id="displayTop">
+          <div id="gameInfo">
+            <GameInfo
+              score={this.props.score}
+              qCount={this.state.qCount}
+              question={this.state.question}
+            />
+          </div>
+          <div id="quit">
+            {this.props.gameLength !== this.state.qCount.toString() &&
+              <Link to="/end-game">
+                <button id="quitButton">QUIT GAME</button>
+              </Link>}
+          </div>
+        </div>
         <Question
           question={this.state.question.question}
           isAnswered={this.state.isAnswered}
@@ -96,9 +106,6 @@ class Game extends React.Component {
             options={this.state.options}
             handleSubmit={this.handleSubmit}
           />}
-        <Link to="/">
-          <button>QUIT GAME</button>
-        </Link>
       </div>
     )
   }

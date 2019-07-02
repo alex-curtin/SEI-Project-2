@@ -4,22 +4,20 @@
 }
 
 header {
-  border: 1px solid black;
+  border: 5px solid transparent;
+  border-bottom: 5px solid black;
+  background: tomato;
+  color: white;
 }
 
 /* SELECT CATEGORIES */
-
-.your-cat {
-  display: inline;
-  margin: 5px;
-  font-size: 15px;
-  background: lightpink;
-  padding: 3px;
+#categoriesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#categories {
-  margin: 0 auto;
-  width: 70%;
+#categoriesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -34,28 +32,76 @@ header {
   font-size: 15px;
 }
 
+.cat-button-off:hover, .cat-button-on:hover {
+  cursor: pointer;
+}
+
 .cat-button-on {
   background: transparent;
   border: 3px solid lightblue;
 }
 
-#done {
+#done, #start {
   text-decoration: none;
   color: black;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: bolder;
   border: none;
   background: green;
   color: white;
-  height: 30px;
-  width: 60px;
+  height: 50px;
+  width: 80px;
   margin-top: 20px;
 }
 
+/* START SECTION */
+#setLength {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+}
+
+input[type="number"] {
+  width: 50px;
+  height: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+
 /* GAME SECTION */
 #display {
-border: 1px solid black;
+border: 2px solid transparent;
 margin: 0 auto;
 width: 90%;
+}
+
+#displayTop {
+display: grid;
+grid-template-columns: 1fr 7fr 1fr;
+margin-bottom: 20px;
+}
+
+#gameInfo {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: center;
+}
+
+#quit {
+  margin: auto 0;
+}
+
+#quitButton {
+  width: 100px;
+  height: 50px;
+  background: lightblue;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
 }
 
 /* GAME INFO */
@@ -64,8 +110,6 @@ width: 90%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   width: 60%;
-  margin: 0 auto;
-  border: 1px solid black;
   height: 100px;
 }
 #score {
@@ -79,20 +123,17 @@ width: 90%;
   text-align: center;
 }
 
+
 /* QUESTIONS */
 #question-section {
   font-size: 20px;
-  /* display: flex;
-  justify-content: center; */
   height: 150px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-}
-
-#question-section div {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #question {
@@ -115,17 +156,17 @@ width: 90%;
   color: red;
 }
 
-/* BUTTONS */
+/* OPTIONS/RESULTS */
 .options {
-  height: 200px;
+  height: 160px;
   width: 60%;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
 }
 
-.opt-button, .right-answer, .wrong-answer, #next {
+.opt-button, .right-answer, .wrong-answer, #next, #finish {
   width: 95%;
   height: 90%;
   margin: 5px auto;
@@ -133,6 +174,11 @@ width: 90%;
   background: yellow;
   font-size: 20px;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
 .wrong-answer {
   background: grey;
 }
@@ -142,7 +188,29 @@ width: 90%;
 }
 
 #next {
-  width: 20%;
+  width: 160px;
+  height: 40px;
   background: hotpink;
   color: white;
+}
+
+#finish {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background: hotpink;
+  color: white;
+}
+
+
+
+/* END GAME SECTION */
+#playAgain {
+  background: lightblue;
+  color: white;
+  border: none;
+  height: 50px;
+  width: 80px;
+  font-weight: bold;
+  font-size: 15px;
 }

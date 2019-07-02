@@ -4,9 +4,10 @@ import { Link, Route } from 'react-router-dom';
 const Home = () => {
   return (
     <div id="home">
-      <h2>Select some categories to start the game</h2>
+      <h2>It's time to test your knowledge!</h2>
       <Link to='/categories'>
-        <button>If you insist</button>
+        <button className="button"
+          id="start">IF YOU INSIST</button>
       </Link>
     </div>
   )

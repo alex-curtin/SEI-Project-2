@@ -25,7 +25,9 @@ const Result = (props) => {
         }
       </div>
       {props.gameLength == props.qCount ?
-        <Link to='/end-game'>THIS WAS THE LAST QUESTION</Link> :
+        <Link to='/end-game'>
+          <button id="finish">FINNISH</button>
+        </Link> :
         <button id="next"
           onClick={props.nextQuestion}
         >Next Question</button>}

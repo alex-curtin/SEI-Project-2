@@ -30,7 +30,7 @@ class App extends React.Component {
     const current = this.state.selectedCats;
     current.includes(cat) ?
       this.removeCategory(cat) :
-      this.addCategory(cat);
+      this.addCategory(cat)
   }
 
   addCategory = (catToAdd) => {
@@ -56,21 +56,23 @@ class App extends React.Component {
     })
   }
 
-  handleSubmit = (ev) => {
-    ev.preventDefault();
-  }
-
   scorePoints = () => {
     this.setState((prevState) => ({
       score: prevState.score + 100,
     }))
   }
 
+  resetScore = () => {
+    this.setState({
+      score: 0,
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header>
-          <h1>This is a Trivia Game</h1>
+          <h1>Trivia Game</h1>
         </header>
         <Route
           path="/"
@@ -106,7 +108,10 @@ class App extends React.Component {
         <Route
           path='/end-game'
           render={() =>
-            <EndGame />
+            <EndGame
+              score={this.state.score}
+              resetScore={this.resetScore}
+            />
           }
         />
       </div>

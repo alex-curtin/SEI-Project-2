@@ -5,9 +5,9 @@ import { fixCategoryName } from '../services/helper-functions';
 const Categories = (props) => {
 
   return (
-    <div>
-      <p>Select Categories (at least 3)</p>
-      <div id="categories">
+    <div id="categoriesPage">
+      <h2>Please select at least three categories</h2>
+      <div id="categoriesGrid">
         {props.categories.map(cat => (
           <button
             className={"cat-button" +
