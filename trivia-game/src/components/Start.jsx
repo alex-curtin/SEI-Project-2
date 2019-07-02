@@ -12,17 +12,17 @@ const Start = (props) => {
           type="number"
           onChange={props.handleChange}
           value={props.gameLength}
-          min="1"
+          min="5"
         >
 
-        </input> Questions</label>
-      {props.gameLength &&
+        </input> questions.</label>
+      <p>(5 question minimum)</p>
+      {props.gameLength > 4 &&
         <Link
           to='/game'>
           <button id="start">
             START</button>
         </Link>}
-
     </div>
   )
 }

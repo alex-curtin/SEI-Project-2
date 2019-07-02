@@ -5,9 +5,19 @@
 
 header {
   border: 5px solid transparent;
-  /* border-bottom: 5px solid black; */
   background: tomato;
   color: white;
+}
+
+/* BUTTON DEFAULT */
+button {
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* SELECT CATEGORIES */
@@ -25,15 +35,9 @@ header {
 .cat-button-off, .cat-button-on {
   width: 130px;
   height: 60px;
-  border: none;
   background: lightblue;
   border: 3px solid transparent;
   margin: 10px;
-  font-size: 15px;
-}
-
-.cat-button-off:hover, .cat-button-on:hover {
-  cursor: pointer;
 }
 
 .cat-button-on {
@@ -44,9 +48,7 @@ header {
 #done, #start {
   text-decoration: none;
   color: black;
-  font-size: 15px;
   font-weight: bolder;
-  border: none;
   background: green;
   color: white;
   height: 50px;
@@ -68,8 +70,6 @@ input[type="number"] {
   font-size: 18px;
   text-align: center;
 }
-
-
 
 /* GAME SECTION */
 #display {
@@ -101,9 +101,6 @@ font-weight: bolder;
   height: 50px;
   background: transparent;
   color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
   border: 2px solid white;
 }
 
@@ -131,7 +128,7 @@ font-weight: bolder;
 #question-section {
   font-size: 20px;
   height: 160px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
@@ -177,13 +174,8 @@ font-weight: bolder;
   width: 95%;
   height: 90%;
   margin: 5px auto;
-  border: none;
   background: yellow;
   font-size: 20px;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 .wrong-answer {
@@ -204,20 +196,16 @@ button:hover {
 #finish {
   width: 100px;
   height: 40px;
-  border: none;
   background: hotpink;
   color: white;
 }
 
 /* END GAME SECTION */
 #playAgain {
-  background: lightblue;
+  background: green;
   color: white;
-  border: none;
   height: 50px;
   width: 80px;
-  font-weight: bold;
-  font-size: 15px;
 }
 
 @media only screen 

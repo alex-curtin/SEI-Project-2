@@ -48,8 +48,19 @@ class Game extends React.Component {
     })
   }
 
+
   setPoints = () => {
-    const points = Math.floor(Math.random() * (40)) + 10;
+    const diff = this.state.question.difficulty;
+    let min = 10;
+    let max = 40;
+    if (diff === 'medium') {
+      min = 40;
+      max = 70;
+    } else if (diff === 'hard') {
+      min = 70;
+      max = 100;
+    }
+    const points = Math.floor(Math.random() * (max - min)) + min;
     this.setState({
       points: points,
     })
