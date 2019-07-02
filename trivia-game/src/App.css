@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'IBM Plex Mono', sans-serif;
+  height: 100%;
 }
 
 header {
@@ -9,7 +10,7 @@ header {
   color: white;
 }
 
-/* BUTTON DEFAULT */
+/* BUTTON DEFAULTS */
 button {
   border: none;
   font-size: 15px;
@@ -20,11 +21,36 @@ button:hover {
   cursor: pointer;
 }
 
+/* HOME SECTION */
+#home {
+border: 20px dotted yellow;
+width: 400px;
+height: 400px;
+margin: 20px auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+box-sizing: border-box;
+animation: change 5s infinite linear;
+}
+
+@keyframes change {
+0% {border-radius: 100px; border: 20px dotted yellow;}
+50% {border-radius: 400px; border: 25px dotted orange;}
+100% {border-radius: 100px; border: 20px dotted yellow;}
+/* from {border-radius: 400px;}
+to {border-radius: 0;} */
+}
+
+
+
+
 /* SELECT CATEGORIES */
 #categoriesPage {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 #categoriesGrid {
@@ -213,6 +239,20 @@ font-weight: bolder;
   color: white;
   height: 50px;
   width: 80px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: #25F28C;
+  color: white;
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid white;
+}
+
+footer p {
+  margin: 10px;
 }
 
 @media only screen 
