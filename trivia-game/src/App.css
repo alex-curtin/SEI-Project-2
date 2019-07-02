@@ -5,7 +5,7 @@
 
 header {
   border: 5px solid transparent;
-  border-bottom: 5px solid black;
+  /* border-bottom: 5px solid black; */
   background: tomato;
   color: white;
 }
@@ -73,15 +73,17 @@ input[type="number"] {
 
 /* GAME SECTION */
 #display {
-border: 2px solid transparent;
 margin: 0 auto;
-width: 90%;
+width: 100%;
 }
 
 #displayTop {
 display: grid;
 grid-template-columns: 1fr 7fr 1fr;
 margin-bottom: 20px;
+background: green;
+color: white;
+font-weight: bolder;
 }
 
 #gameInfo {
@@ -97,11 +99,12 @@ margin-bottom: 20px;
 #quitButton {
   width: 100px;
   height: 50px;
-  background: lightblue;
+  background: transparent;
   color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
+  border: 2px solid white;
 }
 
 /* GAME INFO */
@@ -127,13 +130,13 @@ margin-bottom: 20px;
 /* QUESTIONS */
 #question-section {
   font-size: 20px;
-  height: 150px;
+  height: 160px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #question {
@@ -141,6 +144,10 @@ margin-bottom: 20px;
   justify-self: flex-start;
   margin: 0;
   margin-top: 10px;
+}
+
+#points {
+  margin: 0;
 }
 
 #correct, #incorrect {
@@ -202,8 +209,6 @@ button:hover {
   color: white;
 }
 
-
-
 /* END GAME SECTION */
 #playAgain {
   background: lightblue;
@@ -213,4 +218,25 @@ button:hover {
   width: 80px;
   font-weight: bold;
   font-size: 15px;
+}
+
+@media only screen 
+and (max-width: 1050px) {
+  #categoriesGrid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen 
+and (max-width: 675px) {
+  #categoriesGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen 
+and (max-width: 490px) {
+  #categoriesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }

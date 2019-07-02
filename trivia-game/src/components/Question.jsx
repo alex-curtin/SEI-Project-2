@@ -2,6 +2,7 @@ import React from 'react';
 import { convertSpecialCharacters } from '../services/helper-functions';
 
 const Question = (props) => {
+  const points = props.points;
   const question = props.question;
   const isRight = props.isRight;
   const result = isRight ?
@@ -15,6 +16,7 @@ const Question = (props) => {
           {result}
         </div> :
         <div>
+          <p id="points">For {points} points:</p>
           <p id="question">{question && convertSpecialCharacters(question)}</p>
         </div>
       }

@@ -17,6 +17,7 @@ class Game extends React.Component {
       answer: '',
       isRight: true,
       options: [],
+      points: 0,
     }
   }
 
@@ -27,6 +28,7 @@ class Game extends React.Component {
       question: resp
     })
     this.createOptions();
+    this.setPoints();
   }
 
   getRandomCategory = () => {
@@ -46,15 +48,21 @@ class Game extends React.Component {
     })
   }
 
+  setPoints = () => {
+    const points = Math.floor(Math.random() * (40)) + 10;
+    this.setState({
+      points: points,
+    })
+  }
+
   handleSubmit = (ev) => {
     const check = (ev.target.id === this.state.question.correct_answer);
     this.setState({
       isRight: check,
       isAnswered: true,
     })
-    check && this.props.scorePoints();
+    check && this.props.scorePoints(this.state.points);
   }
-
 
   nextQuestion = async (ev) => {
     ev.preventDefault();
@@ -68,6 +76,7 @@ class Game extends React.Component {
       options: [],
     }))
     this.createOptions();
+    this.setPoints();
   }
 
 
@@ -93,6 +102,7 @@ class Game extends React.Component {
           question={this.state.question.question}
           isAnswered={this.state.isAnswered}
           isRight={this.state.isRight}
+          points={this.state.points}
         />
         {this.state.isAnswered ?
           <Result

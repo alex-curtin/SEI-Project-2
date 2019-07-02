@@ -19,9 +19,6 @@ export const fixCategoryName = (name) => {
 }
 
 export const convertSpecialCharacters = (str) => {
-  // '&#039;': "'",
-  // '&quot;': '"',
-
-  const fixed = str.replace(/&#039;/g, "'").replace(/&quot;/g, '"');
+  const fixed = str.replace(/&#039;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&percnt/g, '%').replace(/&num/g, '#').replace(/&dollar/g, '$').replace(/&micro/g, 'µ');
   return fixed;
 }

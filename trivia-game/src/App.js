@@ -56,9 +56,9 @@ class App extends React.Component {
     })
   }
 
-  scorePoints = () => {
+  scorePoints = (points) => {
     this.setState((prevState) => ({
-      score: prevState.score + 100,
+      score: prevState.score + points,
     }))
   }
 
