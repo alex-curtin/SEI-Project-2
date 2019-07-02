@@ -14,7 +14,6 @@ const Start = (props) => {
           value={props.gameLength}
           min="5"
         >
-
         </input> questions.</label>
       <p>(5 question minimum)</p>
       {props.gameLength > 4 &&

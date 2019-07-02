@@ -4,6 +4,7 @@ import { convertSpecialCharacters } from '../services/helper-functions';
 const Question = (props) => {
   const points = props.points;
   const question = props.question;
+  const length = props.question && question.length;
   const isRight = props.isRight;
   const result = isRight ?
     <p id="correct">Correct!</p> :
@@ -12,12 +13,14 @@ const Question = (props) => {
     <div id="question-section">
       {props.isAnswered ?
         <div>
-          <p id="question">{convertSpecialCharacters(question)}</p>
+          <p className={"question" + (length < 120 ? "-short" : "-long")}>
+            {unescape(question)}</p>
           {result}
         </div> :
         <div>
           <p id="points">For {points} points:</p>
-          <p id="question">{question && convertSpecialCharacters(question)}</p>
+          <p className={"question" + (length < 120 ? "-short" : "-long")}>
+            {question && unescape(question)}</p>
         </div>
       }
     </div >

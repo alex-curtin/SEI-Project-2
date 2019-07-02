@@ -5,7 +5,7 @@
 
 header {
   border: 5px solid transparent;
-  background: tomato;
+  background: #25F28C;
   color: white;
 }
 
@@ -35,21 +35,23 @@ button:hover {
 .cat-button-off, .cat-button-on {
   width: 130px;
   height: 60px;
-  background: lightblue;
+  background: #046DA5;
   border: 3px solid transparent;
   margin: 10px;
+  color: white;
 }
 
 .cat-button-on {
   background: transparent;
-  border: 3px solid lightblue;
+  border: 3px solid #046DA5;
+  color: #046DA5;
 }
 
 #done, #start {
   text-decoration: none;
   color: black;
   font-weight: bolder;
-  background: green;
+  background: #25F28C;
   color: white;
   height: 50px;
   width: 80px;
@@ -81,7 +83,7 @@ width: 100%;
 display: grid;
 grid-template-columns: 1fr 7fr 1fr;
 margin-bottom: 20px;
-background: green;
+background: #25F28C;
 color: white;
 font-weight: bolder;
 }
@@ -107,9 +109,9 @@ font-weight: bolder;
 /* GAME INFO */
 #info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 60%;
+  width: 75%;
   height: 100px;
 }
 #score {
@@ -136,11 +138,15 @@ font-weight: bolder;
   justify-content: space-between;
 }
 
-#question {
+.question-short {
   font-size: 25px;
   justify-self: flex-start;
   margin: 0;
   margin-top: 10px;
+}
+
+.question-long {
+  font-size: 20px;
 }
 
 #points {
@@ -153,11 +159,11 @@ font-weight: bolder;
 }
 
 #correct {
-  color: green;
+  color: #25F28C;
 }
 
 #incorrect {
-  color: red;
+  color: #DC492F;
 }
 
 /* OPTIONS/RESULTS */
@@ -174,7 +180,8 @@ font-weight: bolder;
   width: 95%;
   height: 90%;
   margin: 5px auto;
-  background: yellow;
+  background: #F55926;
+  color: white;
   font-size: 20px;
 }
 
@@ -183,7 +190,7 @@ font-weight: bolder;
 }
 
 .right-answer {
-  background: green;
+  background: #25F28C;
 }
 
 #next {
@@ -202,7 +209,7 @@ font-weight: bolder;
 
 /* END GAME SECTION */
 #playAgain {
-  background: green;
+  background: #25F28C;
   color: white;
   height: 50px;
   width: 80px;

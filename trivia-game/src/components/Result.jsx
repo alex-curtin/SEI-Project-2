@@ -15,18 +15,18 @@ const Result = (props) => {
                 <button
                   className="right-answer"
                   id={option}
-                >{convertSpecialCharacters(option)}</button> :
+                >{unescape(option)}</button> :
                 <button
                   className="wrong-answer"
                   id={option}
-                >{convertSpecialCharacters(option)}</button>}
+                >{unescape(option)}</button>}
             </div>
           ))
         }
       </div>
       {props.gameLength === props.qCount.toString() ?
         <Link to='/end-game'>
-          <button id="finish">FINNISH</button>
+          <button id="finish">FINISH</button>
         </Link> :
         <button id="next"
           onClick={props.nextQuestion}

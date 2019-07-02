@@ -12,7 +12,7 @@ const Options = (props) => {
               className="opt-button"
               id={option}
               onClick={props.handleSubmit}
-            >{convertSpecialCharacters(option)}</button>
+            >{unescape(option)}</button>
           </div>
         ))
       }
