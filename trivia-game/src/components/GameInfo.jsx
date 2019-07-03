@@ -2,8 +2,7 @@ import React from 'react';
 import { fixCategoryName } from '../services/helper-functions';
 
 const GameInfo = (props) => {
-  const category = props.question &&
-    fixCategoryName(unescape(props.question.category));
+  const category = fixCategoryName(unescape(props.question.category));
 
   return (
     <div id="info">

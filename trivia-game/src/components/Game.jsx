@@ -90,17 +90,17 @@ class Game extends React.Component {
     this.setPoints();
   }
 
-
   render() {
     return (
       <div id="display">
         <div id="displayTop">
           <div id="gameInfo">
-            <GameInfo
-              score={this.props.score}
-              qCount={this.state.qCount}
-              question={this.state.question}
-            />
+            {this.state.question &&
+              <GameInfo
+                score={this.props.score}
+                qCount={this.state.qCount}
+                question={this.state.question}
+              />}
           </div>
           <div id="quit">
             {this.props.gameLength !== this.state.qCount.toString() &&
@@ -109,12 +109,13 @@ class Game extends React.Component {
               </Link>}
           </div>
         </div>
-        <Question
-          question={this.state.question.question}
-          isAnswered={this.state.isAnswered}
-          isRight={this.state.isRight}
-          points={this.state.points}
-        />
+        {this.state.question &&
+          <Question
+            question={this.state.question.question}
+            isAnswered={this.state.isAnswered}
+            isRight={this.state.isRight}
+            points={this.state.points}
+          />}
         {this.state.isAnswered ?
           <Result
             options={this.state.options}

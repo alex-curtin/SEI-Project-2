@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Start = (props) => {
+const SetLength = (props) => {
   return (
     <div id="setLength">
       <h2>One more thing...</h2>
@@ -26,4 +26,4 @@ const Start = (props) => {
   )
 }
 
-export default Start;
+export default SetLength;

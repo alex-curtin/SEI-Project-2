@@ -3,7 +3,7 @@ import './App.css';
 import { withRouter, Route } from 'react-router-dom';
 import { getCategories } from './services/api-helper';
 import Categories from './components/Categories';
-import Start from './components/Start';
+import SetLength from './components/SetLength';
 import Game from './components/Game';
 import Home from './components/Home';
 import EndGame from './components/EndGame';
@@ -88,8 +88,8 @@ class App extends React.Component {
             />}
         />
         <Route
-          path='/start'
-          render={() => <Start
+          path='/set-length'
+          render={() => <SetLength
             gameLength={this.state.gameLength}
             handleChange={this.handleChange}
           />}

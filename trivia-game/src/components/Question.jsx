@@ -4,7 +4,7 @@ import { convertSpecialCharacters } from '../services/helper-functions';
 const Question = (props) => {
   const points = props.points;
   const question = props.question;
-  const length = props.question && question.length;
+  const length = question.length;
   const isRight = props.isRight;
   const result = isRight ?
     <p id="correct">Correct!</p> :
@@ -20,7 +20,7 @@ const Question = (props) => {
         <div>
           <p id="points">For {points} points:</p>
           <p className={"question" + (length < 120 ? "-short" : "-long")}>
-            {question && unescape(question)}</p>
+            {unescape(question)}</p>
         </div>
       }
     </div >
