@@ -72,7 +72,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <h1>TRIVIALIZE</h1>
+          <h1>TRIVIALEX</h1>
         </header>
         <Route
           path="/"
