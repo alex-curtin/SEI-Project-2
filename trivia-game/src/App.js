@@ -74,46 +74,48 @@ class App extends React.Component {
         <header>
           <h1>TRIVIALEX</h1>
         </header>
-        <Route
-          path="/"
-          exact render={() => <Home />}
-        />
-        <Route
-          path='/categories'
-          render={() =>
-            <Categories
-              categories={this.state.categories}
-              changeSelected={this.changeSelected}
-              selectedCats={this.state.selectedCats}
-            />}
-        />
-        <Route
-          path='/set-length'
-          render={() => <SetLength
-            gameLength={this.state.gameLength}
-            handleChange={this.handleChange}
-          />}
-        />
-        <Route
-          path='/game'
-          render={() =>
-            <Game
-              categories={this.state.selectedCats}
-              score={this.state.score}
-              scorePoints={this.scorePoints}
+        <main>
+          <Route
+            path="/"
+            exact render={() => <Home />}
+          />
+          <Route
+            path='/categories'
+            render={() =>
+              <Categories
+                categories={this.state.categories}
+                changeSelected={this.changeSelected}
+                selectedCats={this.state.selectedCats}
+              />}
+          />
+          <Route
+            path='/set-length'
+            render={() => <SetLength
               gameLength={this.state.gameLength}
-            />
-          }
-        />
-        <Route
-          path='/end-game'
-          render={() =>
-            <EndGame
-              score={this.state.score}
-              resetScore={this.resetScore}
-            />
-          }
-        />
+              handleChange={this.handleChange}
+            />}
+          />
+          <Route
+            path='/game'
+            render={() =>
+              <Game
+                categories={this.state.selectedCats}
+                score={this.state.score}
+                scorePoints={this.scorePoints}
+                gameLength={this.state.gameLength}
+              />
+            }
+          />
+          <Route
+            path='/end-game'
+            render={() =>
+              <EndGame
+                score={this.state.score}
+                resetScore={this.resetScore}
+              />
+            }
+          />
+        </main>
         <footer>
           <p>a game by Alex Curtin, 2019 with <a href="https://opentdb.com/">Open Trivia Database</a></p>
         </footer>

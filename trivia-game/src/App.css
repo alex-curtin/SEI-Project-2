@@ -317,7 +317,8 @@ footer {
 }
 
 footer p {
-  margin: 10px;
+  margin: 5px 10px;
+  font-size: 12px;
 }
 
 footer a {
@@ -414,7 +415,7 @@ h1 {
       margin-top: 10px;
     }
     footer {
-      font-size: 12px;
+      font-size: 10px;
       justify-self: flex-start;
       margin: 0;
       margin-top: 10px;
