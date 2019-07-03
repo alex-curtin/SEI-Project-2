@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'Varela', sans-serif;
   height: 100%;
 }
 
@@ -8,6 +8,13 @@ header {
   border: 5px solid transparent;
   background: #25F28C;
   color: white;
+  font-family: 'Varela Round', sans-serif;
+}
+
+h1 {
+  font-size: 55px;
+  margin: 10px;
+  letter-spacing: 8px;
 }
 
 /* BUTTON DEFAULTS */
@@ -15,6 +22,7 @@ button {
   border: none;
   font-size: 15px;
   font-weight: bold;
+  font-family: 'Varela Round', sans-serif;
 }
 
 button:hover {
@@ -94,7 +102,7 @@ animation: change 5s infinite linear;
 }
 
 /* START SECTION */
-#setLength {
+#setLength, #end {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -157,7 +165,7 @@ font-weight: bolder;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 80%;
+  width: 90%;
   height: 100px;
 }
 
@@ -187,14 +195,14 @@ font-weight: bolder;
 }
 
 .question-short {
-  font-size: 25px;
+  font-size: 30px;
   justify-self: flex-start;
   margin: 0;
   margin-top: 10px;
 }
 
 .question-long {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #points {
@@ -260,9 +268,25 @@ font-weight: bolder;
   background: #25F28C;
   color: white;
   height: 50px;
-  width: 80px;
+  width: 100px;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
+#end h2 {
+  font-size: 30px;
+  margin: 0;
+}
+#end h3 {
+  font-size: 25px;
+  margin: 0;
+}
+#end p {
+  font-size: 40px;
+  margin: 0;
+}
+
+/* FOOTER */
 footer {
   position: fixed;
   bottom: 0;
