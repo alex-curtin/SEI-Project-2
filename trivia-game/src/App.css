@@ -7,8 +7,10 @@
 header {
   border: 5px solid transparent;
   background: #30B913;
+  border-bottom: 15px solid #30B913;
   color: white;
   font-family: 'Varela Round', sans-serif;
+  margin: 0;
 }
 
 h1 {
@@ -137,6 +139,8 @@ width: 100%;
 display: grid;
 grid-template-columns: 1fr 7fr 1fr;
 margin-bottom: 20px;
+margin-top: 0;
+padding-top: 5px;
 background: #30B913;
 color: white;
 font-weight: bolder;
@@ -342,10 +346,7 @@ and (max-width: 1050px) {
   #display {
   margin-bottom: 100px;
   }
-
-  
 }
-
 
 @media only screen 
 and (max-width: 675px) {
@@ -363,11 +364,13 @@ h1 {
     grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr;
     margin-bottom: 10px;
+    border-top: 10px solid #30B913;
     }
 
     #gameInfo {
       grid-column-start: 1;
       grid-row-start: 2;
+      margin-top: 5px;
     }
     #quit {
       grid-row-start: 1;
@@ -406,9 +409,15 @@ h1 {
     }
     .question-long {
       font-size: 20px;
+      justify-self: flex-start;
+      margin: 0;
+      margin-top: 10px;
     }
     footer {
       font-size: 12px;
+      justify-self: flex-start;
+      margin: 0;
+      margin-top: 10px;
     }
 }
 
