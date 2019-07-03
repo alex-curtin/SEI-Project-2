@@ -3,7 +3,7 @@
   font-family: 'Varela', sans-serif;
   height: 100%;
 }
-
+/* HEADER */
 header {
   border: 5px solid transparent;
   background: #25F28C;
@@ -101,7 +101,7 @@ animation: change 5s infinite linear;
   margin-top: 20px;
 }
 
-/* START SECTION */
+/* SET LENGTH SECTION */
 #setLength, #end {
   display: flex;
   flex-direction: column;
@@ -195,6 +195,13 @@ font-weight: bolder;
 }
 
 .question-short {
+  font-size: 35px;
+  justify-self: flex-start;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.question-med {
   font-size: 30px;
   justify-self: flex-start;
   margin: 0;
@@ -203,6 +210,9 @@ font-weight: bolder;
 
 .question-long {
   font-size: 25px;
+  justify-self: flex-start;
+  margin: 0;
+  margin-top: 10px;
 }
 
 #points {
@@ -212,6 +222,7 @@ font-weight: bolder;
 #correct, #incorrect {
   font-size: 30px;
   justify-self: flex-end;
+  margin: 10px;
 }
 
 #correct {
@@ -246,7 +257,11 @@ font-weight: bolder;
 }
 
 .right-answer {
-  background: #25F28C;
+  background: green;
+}
+
+.wrong-answer:hover, .right-answer:hover {
+  cursor: default;
 }
 
 #next {
@@ -301,6 +316,11 @@ footer p {
   margin: 10px;
 }
 
+footer a {
+  text-decoration: none;
+  color: grey;
+}
+
 @media only screen 
 and (max-width: 1050px) {
   #categoriesGrid {
@@ -318,12 +338,16 @@ and (max-width: 1050px) {
     grid-template-columns: 1fr;
   }
 
+  #display {
+  margin-bottom: 100px;
+  }
+
   #displayTop {
     height: 280px;
     display: grid;
     grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     }
 
     #gameInfo {
@@ -363,5 +387,15 @@ and (max-width: 675px) {
 and (max-width: 490px) {
   #categoriesGrid {
     grid-template-columns: 1fr 1fr;
+  }
+  .question-short {
+    font-size: 25px;
+    justify-self: flex-start;
+    margin: 0;
+    margin-top: 10px;
+  }
+  
+  .question-long {
+    font-size: 20px;
   }
 }

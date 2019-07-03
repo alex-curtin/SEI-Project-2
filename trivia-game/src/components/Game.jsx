@@ -38,6 +38,16 @@ class Game extends React.Component {
     return shuffled[0].id
   }
 
+  getQuestionLength = (question) => {
+    if (question.length < 80) {
+      return '-short'
+    } else if (question.length < 130) {
+      return '-med'
+    } else {
+      return '-long'
+    }
+  }
+
   createOptions = () => {
     const wrong = this.state.question.incorrect_answers;
     const right = this.state.question.correct_answer;
@@ -115,6 +125,7 @@ class Game extends React.Component {
             isAnswered={this.state.isAnswered}
             isRight={this.state.isRight}
             points={this.state.points}
+            getQuestionLength={this.getQuestionLength}
           />}
         {this.state.isAnswered ?
           <Result

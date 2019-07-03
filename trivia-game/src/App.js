@@ -115,7 +115,7 @@ class App extends React.Component {
           }
         />
         <footer>
-          <p>A game by Alex Curtin, 2019 with Open Trivia Database</p>
+          <p>a game by Alex Curtin, 2019 with <a href="https://opentdb.com/">Open Trivia Database</a></p>
         </footer>
       </div>
     );
