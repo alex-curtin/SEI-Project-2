@@ -7,7 +7,7 @@ const GameInfo = (props) => {
 
   return (
     <div id="info">
-      <p id="score">Score: {props.score}</p>
+      <h3 id="score">Score: {props.score}</h3>
       <p>Question # {props.qCount}</p>
       <p>Category: {category}</p>
       <p>Difficulty: {props.question.difficulty}</p>
